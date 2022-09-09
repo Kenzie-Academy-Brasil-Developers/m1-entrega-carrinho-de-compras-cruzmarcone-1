@@ -26,10 +26,12 @@ const productsCart = [
     }
 ]
 
-let soma = 0
-
-for (let i = 0; i < productsCart.length; i++){
-    soma += productsCart[i].price
+function soma(){
+    let a = 0
+    for (let i = 0; i < productsCart.length; i++){
+        a += productsCart[i].price
+    }
+    return a
 }
 
 let principal = document.createElement('main')
@@ -49,7 +51,7 @@ let containerTotal = document.createElement('div')
 let textoTotal = document.createElement('span')
     textoTotal.innerText = 'Total'
 let valorTotal = document.createElement('span')
-    valorTotal.innerText = `R$ ${soma}`
+    valorTotal.innerText = `R$ ${soma()}`
 let botao = document.createElement('button')
     botao.innerText = 'Finalizar Compra'
 
